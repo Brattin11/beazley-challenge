@@ -34,6 +34,6 @@ const getMetaData = async (url, desiredProperty) => {
     }
 }
 
-[url, desiredProperty] = args;
+const [url, desiredProperty] = args;
 
 getMetaData(url, desiredProperty).then(res => console.log(res))
