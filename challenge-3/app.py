@@ -46,12 +46,12 @@ def delete_data(key):
                     data.remove(item)
             
             if not hasItem:
-                return jsonify({'message': 'Not found.'}), 401
+                return jsonify({'message': 'Not found.'}), 404
             
             database.seek(0)
             json.dump(data, database)
             database.truncate()
-            return jsonify({'message': 'Success!'}), 201
+            return jsonify({'message': 'Success!'}), 200
     except:
         return jsonify({'message': 'Unable to process request'}), 503
 
@@ -62,18 +62,20 @@ def update_data(key):
             data = json.load(database)
             body = request.get_json()
 
-            if not body in data:
-                return jsonify({'message': 'Not found.'}), 401
-
+            hasItem = False
             for item in data:
                 data_key = list(item.keys())[0]
                 if data_key == key:
+                    hasItem = True
                     item.update(body)
+            
+            if not hasItem:
+                return jsonify({'message': 'Not found.'}), 404
             
             database.seek(0)
             json.dump(data, database)
             database.truncate()
-            return jsonify({'message': 'Success!'}), 201
+            return jsonify({'message': 'Success!'}), 200
     except:
         return jsonify({'message': 'Unable to process request'}), 503
 
