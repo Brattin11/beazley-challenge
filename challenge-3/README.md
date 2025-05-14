@@ -3,6 +3,9 @@
 ### Running the server
 `python3 -m flask run`
 
+To run this in the cloud, I'd probably set up an AWS or Google Cloud instance
+and use GitHub Actions for automated testing and deployment. 
+
 ### Mock Data - add this to `database.json` for testing purposes
 `[{"80": "Apache"}, {"443": "nginx"}, {"8080": "Apache Tomcat"}]`
 
