@@ -4,7 +4,7 @@
 `python3 -m flask run`
 
 ### Mock Data - add this to `database.json` for testing purposes
-[{"80": "Apache"}, {"443": "nginx"}, {"8080": "Apache Tomcat"}]
+`[{"80": "Apache"}, {"443": "nginx"}, {"8080": "Apache Tomcat"}]`
 
 ### Curls
 
