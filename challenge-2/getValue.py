@@ -1,3 +1,10 @@
+"""
+getValue.py
+
+You have a nested object, create a function that allows for the nested object and a key and returns the value of
+key.
+"""
+
 startData = {"a": {"b": {"c": 1}, "e": 5}, "f": {"g": {"h": 4}, "i": 3}}
 
 def getVal(obj, target):
